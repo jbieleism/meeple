@@ -1,13 +1,25 @@
 (function(){
-  // This file will serve as the apex for front end routes
+  // This file will direct front end routes
   angular.module('Meeple', ['ui-router'])
-    .config(function($stateProvider){
+
+    .config(function($stateProvider, $urlRouterProvider){
+
+      $urlRouterProvider.otherwise('/')
+
       $stateProvider
-        .state('/signup', {
+        .state('signup', {
           url: '/signup',
           templateUrl: '/public/signup/signup.html',
           controller: 'SignUpController'
         })
+        .state('login', {
+          url: '/login',
+          templateUrl: '/public/login/login.html',
+          controller: 'LoginController'
+        })
+
+
+
     })
 
 

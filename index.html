@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html>
+<html ng-app="Meeple">
 <head>
   <title>Meeple</title>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.grey-light_blue.min.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
 </head>
 
 
 
 <body>
 test
+
+  <div ui-view></div>
+
+  <button ui-sref="signup">Signup</button>
+  <button ui-sref="login">Login</button>
+
 </body>
 
 
@@ -15,6 +22,11 @@ test
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
-<script src="/public/index.js"></script>
+
+<script type="text/javascript" src="/public/index.js"></script>
+
+<!-- Controllers -->
+<!-- <script src="public/signup/signup-controller.js"></script> -->
+
 
 </html>
