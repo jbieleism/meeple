@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mognodb://localhost:27017/meepldb', () => console.log("connected to meepl db"))
+mongoose.connect('mognodb://localhost:27017/meepledb', () => console.log("connected to meeple db"))
 
 const app = express();
 let port = 8000;
