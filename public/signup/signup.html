@@ -1,7 +1,9 @@
 <div>
-
-  <inputtype="text" ng-model="newUser.username" placeholder="username">
-  <inputtype="password" ng-model="newUser.password" placeholder="password" class="form-control">
+Create a profile
+  <input type="text" ng-model="newUser.username" placeholder="username">
+  <input type="password" ng-model="newUser.password" placeholder="password" class="form-control">
   <button ng-click="createUser()">Submit</button>
 
+  <p>Already signed up?</p>
+  <button ui-sref="login">Login</button>
 </div>

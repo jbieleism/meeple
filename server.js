@@ -3,7 +3,11 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 
+const authController = require('./server/controllers/authentication-controller')
+
 const app = express();
+
+
 
 
 mongoose.connect('mongodb://localhost:27017/meepledb', () => console.log("Connected to Meeple Database"));
@@ -16,6 +20,8 @@ app.use('/public', express.static(__dirname + '/public'));
 //Serves index file on initial '/' request
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')) );
 
+
+app.post('/api/public/signup', authController.signup)
 
 
 var port = 8000;

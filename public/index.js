@@ -7,7 +7,7 @@
       $urlRouterProvider.otherwise('/login')
 
       $stateProvider
-        .state('signUp', {
+        .state('signup', {
           url: '/signup',
           templateUrl: 'public/signup/signup.html',
           controller: 'SignupController'
@@ -17,6 +17,7 @@
           templateUrl: 'public/login/login.html',
           controller: 'LoginController'
         })
+
 
 
     })

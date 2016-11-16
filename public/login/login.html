@@ -1,5 +1,10 @@
 <div>
+  Login
   <input id="emailInput" type="text" ng-model="login.email" placeholder="email" class="form-control">
   <input id="passwordInput" type="password" ng-model="login.password" placeholder="password" class="form-control">
   <button class="btn btn-primary" ng-click="loginUser()">Login</button>
+
+  <p>Not a user?</p>
+  <button ui-sref="signup"> Create a profile!</button>
+
 </div>
