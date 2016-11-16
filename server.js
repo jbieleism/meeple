@@ -21,7 +21,8 @@ app.use('/public', express.static(__dirname + '/public'));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')) );
 
 
-app.post('/api/public/signup', authController.signup)
+app.post('/api/public/signup', authController.signup);
+app.post('/api/public/login', authController.login);
 
 
 var port = 8000;
