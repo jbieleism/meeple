@@ -6,7 +6,7 @@
       $scope.loginUser = function(){
         var user = $scope.login
         $http.post('/api/public/login', user)
-          .success(function(){
+          .success(function(response){
             console.log("successful login")
           })
           .error(function(error){
