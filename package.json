@@ -1,16 +1,24 @@
 {
-  "name": "meepl",
+  "name": "meeple",
   "version": "1.0.0",
-  "description": "A chat for people",
+  "description": "",
   "scripts": {
     "start": "nodemon server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbieleism/meeple.git"
+  },
   "author": "Justin Biele",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbieleism/meeple/issues"
+  },
+  "homepage": "https://github.com/jbieleism/meeple#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "mongoose": "^4.6.7",
+    "mongoose": "^4.6.6",
     "nodemon": "^1.11.0",
     "path": "^0.12.7"
   }

@@ -1,8 +1,10 @@
 (function(){
+
   angular.module('Meeple')
-    .controller('LoginController', ['$state', '$scope', '$http', function($state, $scope, $http){
+    .controller('LoginController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
 
 
     }])
-}())
+
+}());
