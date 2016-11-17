@@ -15,9 +15,9 @@ module.exports.login = (req, res) => {
       console.log('Error in backend signin: ', err)
     }
     else{
-      console.log("Some results ", results)
       res.json({
-        username: req.body.username
+        username: req.body.username,
+
       })
     }
   })

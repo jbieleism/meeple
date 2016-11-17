@@ -17,6 +17,11 @@
           templateUrl: 'public/login/login.html',
           controller: 'LoginController'
         })
+        .state('Home', {
+          url: '/home',
+          templateUrl: 'public/home/home.html',
+          controller: 'HomeController'
+        })
 
 
 

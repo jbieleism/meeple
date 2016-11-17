@@ -7,10 +7,9 @@ const authController = require('./server/controllers/authentication-controller')
 
 const app = express();
 
-
-
-
 mongoose.connect('mongodb://localhost:27017/meepledb', () => console.log("Connected to Meeple Database"));
+
+
 
 app.use(bodyParser.json());
 
