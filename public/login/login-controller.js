@@ -4,8 +4,8 @@
     .controller('LoginController', ['$scope', '$http', '$state', function($scope, $http, $state) {
 
       $scope.loginUser = function(){
-        var user = $scope.login
-        $http.post('/api/public/login', user)
+
+        $http.post('/api/public/login', $scope.login)
           .success(function(response){
             console.log("successful login")
           })
