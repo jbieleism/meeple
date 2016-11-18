@@ -37,8 +37,7 @@ app.post('/api/public/login', authController.login);
 
 var port = 8000;
 
-server.listen(port, () => console.log("Web Socket listening on port: ", port))
-// app.listen(port, () => console.log("Listening on port: ", port));
+server.listen(port, () => console.log("Socket server listening on port: ", port))
 
 
 

@@ -7,4 +7,10 @@
   <p>Not a user?</p>
   <button ui-sref="signup"> Create a profile!</button>
 
+
+  <div ng-show="loggedIn">
+    Already Logged in
+    <a ui-sref="Home">Go to home</a>
+  </div>
+
 </div>

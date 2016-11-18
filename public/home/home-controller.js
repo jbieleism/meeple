@@ -1,13 +1,18 @@
 (function(){
 
   angular.module('Meeple')
-    .controller('HomeController', ['$scope', '$http', '$state', function($scope, $http, $state){
+    .controller('HomeController', ['$location', '$scope', '$http', '$state', function($location, $scope, $http, $state){
+
 
 
       $scope.sendMessage = function(){
 
+      }
 
 
+      $scope.logout = function(){
+        localStorage.clear();
+        $location.path('/login')
       }
 
     }])

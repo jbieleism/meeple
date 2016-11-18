@@ -16,8 +16,7 @@ module.exports.login = (req, res) => {
     }
     else{
       res.json({
-        username: req.body.username,
-
+        username: req.body.username
       })
     }
   })
