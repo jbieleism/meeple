@@ -2,10 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const app = express();
+
+
+// sockets
+const server = require('http').createServer(app);
+const io = require('socket.io').listen(server)
+
+io.on('connection', (socket) => console.log("Socket connected"))
+
+
 
 const authController = require('./server/controllers/authentication-controller')
 
-const app = express();
 
 mongoose.connect('mongodb://localhost:27017/meepledb', () => console.log("Connected to Meeple Database"));
 
@@ -28,7 +37,8 @@ app.post('/api/public/login', authController.login);
 
 var port = 8000;
 
-app.listen(port, () => console.log("Listening on port: ", port));
+server.listen(port, () => console.log("Web Socket listening on port: ", port))
+// app.listen(port, () => console.log("Listening on port: ", port));
 
 
 

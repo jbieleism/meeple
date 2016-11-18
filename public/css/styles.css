@@ -1,0 +1,13 @@
+.chatBox{
+  text-align:center;
+  height:500px;
+  border:1px black dashed;
+}
+
+#userChat{
+  text-align:center;
+  margin:0 auto;
+}
+#userChatInput{
+  text-align:center;
+}

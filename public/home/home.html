@@ -1,5 +1,12 @@
 <div ng-controller="HomeController">
 
-  This is the home page after the login
+<div ng-model="chatBox" class="chatBox">
+
+</div>
+
+<div id="userChat">
+  <input ng-model="msg" id="userChatInput" type="text">
+</div>
+<button ng-click="sendMessage()">Submit</button>
 
 </div>
