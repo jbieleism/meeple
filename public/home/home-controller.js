@@ -6,7 +6,8 @@
 
 
       $scope.sendMessage = function(){
-
+        var msg = $scope.msg
+        console.log(msg)
       }
 
 
@@ -16,5 +17,4 @@
       }
 
     }])
-
 }())

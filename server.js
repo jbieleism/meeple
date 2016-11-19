@@ -1,4 +1,4 @@
-const express = require('express');
+;const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -7,9 +7,19 @@ const app = express();
 
 // sockets
 const server = require('http').createServer(app);
-const io = require('socket.io').listen(server)
+const io = require('socket.io').listen(server);
+const connections = [];
 
-io.on('connection', (socket) => console.log("Socket connected"))
+io.sockets.on('connection', (socket) => {
+  connections.push(socket);
+  console.log('Connections: %s sockets connected', connections.length)
+
+  socket.on('disconnect', (data) => {
+    connections.splice(connections.indexOf(socket));
+    console.log("User disconnected. %s connections remain", connections.length);
+  });
+
+})
 
 
 

@@ -5,6 +5,7 @@
 
       if (localStorage['User-Info']){
         $scope.loggedIn = true;
+
       }
       else{
         $scope.loggedIn = false;

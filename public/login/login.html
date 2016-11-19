@@ -1,4 +1,4 @@
-<div>
+<div ng-show="!loggedIn">
   Login
   <input id="emailInput" type="text" ng-model="login.username" placeholder="username" class="form-control">
   <input id="passwordInput" type="password" ng-model="login.password" placeholder="password" class="form-control">
@@ -8,9 +8,11 @@
   <button ui-sref="signup"> Create a profile!</button>
 
 
-  <div ng-show="loggedIn">
-    Already Logged in
-    <a ui-sref="Home">Go to home</a>
-  </div>
 
+</div>
+
+
+<div ng-show="loggedIn">
+  Already Logged in
+  <a ui-sref="Home">Go to home</a>
 </div>
