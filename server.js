@@ -1,4 +1,4 @@
-;const express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -18,6 +18,22 @@ io.sockets.on('connection', (socket) => {
     connections.splice(connections.indexOf(socket));
     console.log("User disconnected. %s connections remain", connections.length);
   });
+
+  socket.on('message', (data) => {
+    io.sockets.emit('new message', {msg: data})
+  })
+
+  socket.on('userConnect', (data, callback) => {
+    callback(true);
+    socket.username = data;
+    users.push(socket.username);
+    updateUsernames();
+  })
+
+  let updateUsernames = () => {
+    io.sockets.emit('get users', usernames)
+  }
+
 
 })
 

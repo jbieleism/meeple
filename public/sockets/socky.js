@@ -1,31 +1,32 @@
 
-//some library file you write independetly of angular
-const io = require('socket.io-client');
 
-class Socket {
-  constructor() {
-    this.socket = io('http://www.somewhere.else/');
-  }
+// //some library file you write independetly of angular
+// const io = require('socket.io-client');
 
-  emit(msg, payload){
-    this.socket.emit(msg, payload);
-  }
+// class Socket {
+//   constructor() {
+//     this.socket = io('http://www.somewhere.else/');
+//   }
 
-  join(room) {
-    this.emit('join', room);
-  }
+//   emit(msg, payload){
+//     this.socket.emit(msg, payload);
+//   }
 
-  on(event, callback) {
-    this.socket.on(event, callback);
-  }
+//   join(room) {
+//     this.emit('join', room);
+//   }
 
-}
+//   on(event, callback) {
+//     this.socket.on(event, callback);
+//   }
 
-
-
-module.exports = Socket;
+// }
 
 
-// some angular file
-import  Socket from 'somewhere';
-angular.module('Meeple', []).value('Socket', new Socket());
+
+// module.exports = Socket;
+
+
+// // some angular file
+// import  Socket from 'somewhere';
+// angular.module('Meeple', []).value('Socket', new Socket());
