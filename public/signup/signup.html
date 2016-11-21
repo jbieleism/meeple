@@ -1,9 +1,12 @@
 <div>
+<md-card class="signupCard">
 Create a profile
   <input type="text" ng-model="newUser.username" placeholder="username">
   <input type="password" ng-model="newUser.password" placeholder="password" class="form-control">
-  <button ng-click="createUser()">Submit</button>
+  <md-button class="signupCardButton" ng-click="createUser()">Submit</md-button>
 
   <p>Already signed up?</p>
-  <button ui-sref="login">Login</button>
+  <md-button class="signupCardButton" ui-sref="login">Login</md-button>
+</md-card>
+
 </div>

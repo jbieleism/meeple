@@ -19,8 +19,8 @@ io.sockets.on('connection', (socket) => {
     console.log("User disconnected. %s connections remain", connections.length);
   });
 
-  socket.on('message', (data) => {
-    io.sockets.emit('new message', {msg: data})
+  socket.on('send message', (data) => {
+    io.sockets.emit('get message', data)
   })
 
   socket.on('userConnect', (data, callback) => {
@@ -48,8 +48,9 @@ mongoose.connect('mongodb://localhost:27017/meepledb', () => console.log("Connec
 
 app.use(bodyParser.json());
 
-// Exposes public directory
+// Exposes directories
 app.use('/public', express.static(__dirname + '/public'));
+app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
 //Serves index file on initial '/' request
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')) );

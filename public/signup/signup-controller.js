@@ -1,12 +1,13 @@
 (function(){
     angular.module('Meeple')
-      .controller('SignupController', ['$scope', '$state', '$http', function($scope, $state, $http){
+      .controller('SignupController', ['$location', '$scope', '$state', '$http', function($location, $scope, $state, $http){
 
         $scope.createUser = function(){
           var user = $scope.newUser;
           $http.post('/api/public/signup', user)
             .success(function(response){
-              console.log("Successful signup", response)
+              console.log("Successful signup", response);
+              $location.path('/')
             })
             .error(function(error){
               console.log('Error in the signup: ', error)

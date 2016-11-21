@@ -1,18 +1,20 @@
-<div ng-show="!loggedIn">
-  Login
-  <input id="emailInput" type="text" ng-model="login.username" placeholder="username" class="form-control">
-  <input id="passwordInput" type="password" ng-model="login.password" placeholder="password" class="form-control">
-  <button class="btn btn-primary" ng-click="loginUser()">Login</button>
 
-  <p>Not a user?</p>
-  <button ui-sref="signup"> Create a profile!</button>
+<md-card class="md-card">
+  <div ng-show="!loggedIn">
+    Login
+    <input id="emailInput" type="text" ng-model="login.username" placeholder="username" class="form-control">
+    <input id="passwordInput" type="password" ng-model="login.password" placeholder="password" class="form-control">
+    <md-button class="md-primary" class="btn btn-primary" ng-click="loginUser()">Login</md-button class="md-primary">
+
+    <p>Not a user?</p>
+    <md-button class="md-primary" ui-sref="signup"> Create a profile!</md-button class="md-primary">
+  </div>
 
 
+  <div ng-show="loggedIn">
+    Already Logged in
+    <md-button class="md-primary" ui-sref="Home">Go to home</md-button class="md-primary">
+  </div>
 
-</div>
 
-
-<div ng-show="loggedIn">
-  Already Logged in
-  <a ui-sref="Home">Go to home</a>
-</div>
+</md-card>

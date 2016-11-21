@@ -11,3 +11,12 @@
 #userChatInput{
   text-align:center;
 }
+
+
+
+.signupCard{
+  background-color:grey;
+}
+.signupCardButton{
+  background-color:lightblue;
+}

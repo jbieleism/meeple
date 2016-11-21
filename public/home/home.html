@@ -1,18 +1,23 @@
-<div ng-controller="HomeController">
-
-<div ng-model="chatBox" class="chatBox">
-
-</div>
-
-<div id="userChat">
-  <input ng-model="msg" id="userChatInput" type="text">
-</div>
-<button ng-click="sendMessage()">Submit</button>
-
-
-<button ng-click="logout()">Logout</button>
 
 
 
+  <div ng-controller="HomeController">
 
-</div>
+    <div ng-model="chatBox" class="chatBox">
+      <ul ng-repeat="message in messages">
+        <li>{{message}}</li>
+      </ul>
+    </div>
+
+    <div id="userChat">
+      <input ng-model="msg" id="userChatInput" type="text">
+    </div>
+    <button ng-click="sendMessage()">Submit</button>
+
+
+    <button ng-click="logout()">Logout</button>
+
+
+
+
+  </div>
