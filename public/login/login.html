@@ -1,20 +1,64 @@
 
-<md-card class="md-card">
-  <div ng-show="!loggedIn">
-    Login
-    <input id="emailInput" type="text" ng-model="login.username" placeholder="username" class="form-control">
-    <input id="passwordInput" type="password" ng-model="login.password" placeholder="password" class="form-control">
-    <md-button class="md-primary" class="btn btn-primary" ng-click="loginUser()">Login</md-button class="md-primary">
+<div class="container">
 
-    <p>Not a user?</p>
-    <md-button class="md-primary" ui-sref="signup"> Create a profile!</md-button class="md-primary">
+  <div class="panel panel-primary loginPanel">
+
+    <div id="loginPanelHeading" class="panel-heading">
+      <h2 class="panel-title loginPanelTitle">
+        Login
+      </h2>
+    </div>
+
+    <div class="panel-body" ng-show="!loggedIn">
+
+      <input id="usernameInput" type="text" ng-model="login.username" placeholder="username" class="form-control">
+
+      <input id="passwordInput" type="password" ng-model="login.password" placeholder="password" class="form-control">
+
+      <div id="loginButton">
+        <button class="btn btn-primary" ng-click="loginUser()">Login</button class="primary">
+      </div>
+
+      <div id="signedInButton">
+
+        <p>Not a user?</p>
+        <button class="btn btn-default" ui-sref="signup"> Create a profile!</button>
+
+      </div>
+
+
+    </div>
+
+
+    <div ng-show="loggedIn">
+      Already Logged in
+      <button class="primary" ui-sref="Home">Go to home</button class="primary">
+    </div>
+
   </div>
+</div>
 
 
-  <div ng-show="loggedIn">
-    Already Logged in
-    <md-button class="md-primary" ui-sref="Home">Go to home</md-button class="md-primary">
-  </div>
 
 
-</md-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

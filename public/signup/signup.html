@@ -1,12 +1,55 @@
-<div>
-<md-card class="signupCard">
-Create a profile
-  <input type="text" ng-model="newUser.username" placeholder="username">
-  <input type="password" ng-model="newUser.password" placeholder="password" class="form-control">
-  <md-button class="signupCardButton" ng-click="createUser()">Submit</md-button>
 
-  <p>Already signed up?</p>
-  <md-button class="signupCardButton" ui-sref="login">Login</md-button>
-</md-card>
+<div class="container">
 
+  <div class="panel panel-primary signupPanel">
+
+    <div id="signupPanelHeading" class="panel-heading">
+      <h2 class="panel-title signupPanelTitle">
+        Signup
+      </h2>
+    </div>
+
+    <div class="panel-body">
+
+      <input id="usernameInput" type="text" ng-model="newUser.username" placeholder="username" class="form-control">
+
+      <input id="passwordInput" type="password" ng-model="newUser.password" placeholder="password" class="form-control">
+
+      <div id="signupButton" >
+        <button class="btn btn-primary" ng-click="createUser()">Submit</button>
+      </div>
+
+      <div id="signedInButton">
+        <p>Already signed up?</p>
+        <button class="btn btn-default" ui-sref="login">Login</button>
+      </div>
+
+    </div>
+
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

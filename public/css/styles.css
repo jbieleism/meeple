@@ -13,10 +13,72 @@
 }
 
 
+/*Login*/
+.loginPanel{
+  margin: auto;
+  margin-top:100px;
+  max-width:600px;
+  border:#333333;
+  box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.75);
+}
+#loginPanelHeading{
+  background-color:#333333;
+  border-color:#333333;
+}
+.loginPanelTitle{
+  text-align:center;
+}
+#passwordInput, #usernameInput, .loginPanelTitle{
+  text-align:center;
+}
+#loginButton{
+  text-align:center;
+  margin: 10 auto;
+}
 
-.signupCard{
-  background-color:grey;
+
+/*Signup*/
+.signupPanel{
+  margin: auto;
+  margin-top:100px;
+  max-width:600px;
+  border:#333333;
+  box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.75);
 }
-.signupCardButton{
-  background-color:lightblue;
+#signupPanelHeading{
+  background-color:#333333;
+  border-color:#333333;
 }
+.signupPanelTitle{
+  text-align:center;
+}
+#signupButton{
+  text-align: center;
+  margin: 10 auto;
+}
+
+
+
+#signedInButton{
+  text-align: center;
+  margin: 10 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

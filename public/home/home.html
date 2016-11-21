@@ -5,7 +5,8 @@
 
     <div ng-model="chatBox" class="chatBox">
       <ul ng-repeat="message in messages">
-        <li>{{message}}</li>
+        <span>{{message.username}}</span>
+        <span>{{message.message}}</span>
       </ul>
     </div>
 
