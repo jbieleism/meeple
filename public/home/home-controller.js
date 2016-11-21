@@ -8,7 +8,7 @@ angular.module('Meeple')
 
     // ensures user is logged in
     // before entering chatroom
-    if(localStorage['length'] === 0){
+    if(!localStorage['User-Info']){
       alert('Must log in');
       $location.path('/');
     };
@@ -27,10 +27,17 @@ angular.module('Meeple')
 
 //////////////////////////////////////////
 
+
     var socket = io.connect('http://localhost:8000');
 
     $scope.messages = [];
-    $scope.sendMessage = function(){
+
+
+
+    $scope.sendMessage = function(e){
+
+
+
 
       var message = {
         username: username,
@@ -41,13 +48,13 @@ angular.module('Meeple')
       console.log('message submitted: ', message);
       $scope.msg = "";
 
-      socket.on('get message', function(data){
-        $scope.messages.push(data);
-        $scope.$digest()
-      })
 
     }
 
+    socket.on('get message', function(data){
+      $scope.messages.push(data);
+      $scope.$digest()
+    })
 
 
 

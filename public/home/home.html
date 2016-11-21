@@ -1,24 +1,31 @@
-
-
-
-  <div ng-controller="HomeController">
+<div ng-controller="HomeController" class="container" id="homePage">
+  <div id="chatSection" class="col-md-8">
 
     <div ng-model="chatBox" class="chatBox">
-      <ul ng-repeat="message in messages">
+      <ul ng-repeat="message in messages track by $index">
         <span>{{message.username}}</span>
         <span>{{message.message}}</span>
+        <hr>
       </ul>
     </div>
 
     <div id="userChat">
-      <input ng-model="msg" id="userChatInput" type="text">
+      <input ng-keypress="callSendMessage(e)" ng-model="msg" id="userChatInput" type="text">
     </div>
+
     <button ng-click="sendMessage()">Submit</button>
 
+  </div>
 
-    <button ng-click="logout()">Logout</button>
+  <div id="sideNav" class="col-md-4">
 
-
-
+    <div class="nav">
+      <span><h1 id="homeTitle">Meeple</h1></span>
+      <span><button id="logoutButton" ng-click="logout()">Logout</button></span>
+    </div>
+    <hr>
 
   </div>
+
+
+</div
