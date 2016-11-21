@@ -1,29 +1,38 @@
-<div ng-controller="HomeController" class="container" id="homePage">
+<div ng-controller="HomeController" class="container-fluid" id="homePage">
+  <!-- Chat Section -->
   <div id="chatSection" class="col-md-8">
-
     <div ng-model="chatBox" class="chatBox">
       <ul ng-repeat="message in messages track by $index">
-        <span>{{message.username}}</span>
-        <span>{{message.message}}</span>
-        <hr>
+        <div class="message">
+          <span id="messageUsername"><h5>{{message.username}}:</h5></span>
+
+          <span id="messageBody"><p>{{message.message}}</p></span>
+          <hr>
+        </div>
       </ul>
     </div>
 
     <div id="userChat">
       <input ng-keypress="callSendMessage(e)" ng-model="msg" id="userChatInput" type="text">
+      <button ng-click="sendMessage()">Submit</button>
     </div>
-
-    <button ng-click="sendMessage()">Submit</button>
-
   </div>
+
+
 
   <div id="sideNav" class="col-md-4">
 
+  <!-- Side Nav Title -->
     <div class="nav">
       <span><h1 id="homeTitle">Meeple</h1></span>
-      <span><button id="logoutButton" ng-click="logout()">Logout</button></span>
+      <span id="logoutButton"><button class="btn btn-default" ng-click="logout()">Logout</button></span>
     </div>
     <hr>
+
+    <button class="btn btn-default">
+      Create chatroom
+    </button>
+
 
   </div>
 
