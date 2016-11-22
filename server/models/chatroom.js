@@ -2,6 +2,16 @@ const mongoose = require('mongoose');
 
 
 module.exports = mongoose.model('Chatroom', {
-  users: Array,
-  messages: Array
-})
+  name: String,
+  message: {
+    username: String,
+    messageBody: String,
+    date: {
+      type: Date,
+      default: Date.now
+    }
+  }
+});
+
+
+

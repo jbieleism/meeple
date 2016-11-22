@@ -40,7 +40,7 @@ io.sockets.on('connection', (socket) => {
 
 
 const authController = require('./server/controllers/authentication-controller')
-
+// const chatController = require('./server/controllers/chat-controller')
 
 mongoose.connect('mongodb://localhost:27017/meepledb', () => console.log("Connected to Meeple Database"));
 
@@ -60,6 +60,10 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')) );
 // Auth Controllers
 app.post('/api/public/signup', authController.signup);
 app.post('/api/public/login', authController.login);
+
+
+// app.post('/api/public/messages', chatController)
+
 
 
 var port = 8000;

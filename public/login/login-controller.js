@@ -15,10 +15,10 @@
 
         $http.post('/api/public/login', $scope.login)
           .success(function(response){
-            console.log("successful login");
             //saves user info to local storage upon successful login
-            localStorage.setItem('User-Info', JSON.stringify(response.username));
+            localStorage.setItem('User-Info', response.username);
             $location.path('/home');
+
           })
           .error(function(error){
             console.log("Login Error: ", error)

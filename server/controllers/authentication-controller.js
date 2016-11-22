@@ -10,7 +10,7 @@ module.exports.signup = (req, res) => {
 
 module.exports.login = (req, res) => {
 
-  User.find(req.body, (err, results) => {
+  User.findOne(req.body, (err, results) => {
     if (err){
       console.log('Error in backend signin: ', err)
     }

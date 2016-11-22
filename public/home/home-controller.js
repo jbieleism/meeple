@@ -8,10 +8,10 @@ angular.module('Meeple')
 
     // ensures user is logged in
     // before entering chatroom
-    if(!localStorage['User-Info']){
+    if(localStorage['User-Info'] === undefined){
       alert('Must log in');
       $location.path('/');
-    };
+    }
 
     //removes quotes from username in localstorage
     var username = [];
@@ -22,7 +22,9 @@ angular.module('Meeple')
                         username.push(index)
                       }
                     });
+
     username = username.join('');
+
 
 
 //////////////////////////////////////////
@@ -30,31 +32,55 @@ angular.module('Meeple')
 
     var socket = io.connect('http://localhost:8000');
 
-    $scope.messages = [];
 
 
 
     $scope.sendMessage = function(e){
 
-
-
-
-      var message = {
+      var requestMessage = {
         username: username,
         message: $scope.msg
       };
 
-      socket.emit('send message', message);
-      console.log('message submitted: ', message);
+      // $http.post('/api/public/messages', requestMessage)
+      //   .success(function(response){
+      //   })
+      //   .error(function(error){
+      //     console.log("There was an error")
+      //   })
+
+      socket.emit('send message', requestMessage);
+      console.log('message submitted: ', requestMessage);
       $scope.msg = "";
 
-
     }
+    $scope.messages = [];
 
     socket.on('get message', function(data){
       $scope.messages.push(data);
       $scope.$digest()
     })
+
+
+
+    $scope.createChatroom = function(){
+      console.log("This will create a chatroom")
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

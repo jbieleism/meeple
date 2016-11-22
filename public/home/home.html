@@ -1,11 +1,10 @@
 <div ng-controller="HomeController" class="container-fluid" id="homePage">
   <!-- Chat Section -->
-  <div id="chatSection" class="col-md-8">
+  <div id="chatSection" class="col-sm-8">
     <div ng-model="chatBox" class="chatBox">
       <ul ng-repeat="message in messages track by $index">
         <div class="message">
           <span id="messageUsername"><h5>{{message.username}}:</h5></span>
-
           <span id="messageBody"><p>{{message.message}}</p></span>
           <hr>
         </div>
@@ -13,25 +12,38 @@
     </div>
 
     <div id="userChat">
-      <input ng-keypress="callSendMessage(e)" ng-model="msg" id="userChatInput" type="text">
-      <button ng-click="sendMessage()">Submit</button>
+      <form ng-submit="sendMessage()">
+        <input ng-model="msg" id="userChatInput" type="text">
+        <button>Submit</button>
+      </form>
     </div>
   </div>
 
 
 
-  <div id="sideNav" class="col-md-4">
+  <div id="sideNav" class="col-sm-4">
 
   <!-- Side Nav Title -->
     <div class="nav">
-      <span><h1 id="homeTitle">Meeple</h1></span>
-      <span id="logoutButton"><button class="btn btn-default" ng-click="logout()">Logout</button></span>
+      <h1 id="homeTitle">Meeple</h1>
+      {{localStorage['User-Info']}}
+      <button id="logoutButton" class="btn btn-default" ng-click="logout()">Logout</button>
     </div>
     <hr>
+    <div>
+      <button ng-click="createChatroom()" class="btn btn-default">
+        Create chatroom
+      </button>
+    </div>
 
-    <button class="btn btn-default">
-      Create chatroom
-    </button>
+    <div class="btn-group">
+      <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Rooms<span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li>{{chatroom.name}}</li>
+        <li>Hello</li>
+        <li>More hellos</li>
+      </ul>
+    </div>
 
 
   </div>
