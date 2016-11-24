@@ -2,18 +2,17 @@ angular.module('Meeple')
 
   .controller('HomeController', ['$location', '$scope', '$http', '$state', function($location, $scope, $http, $state){
 
-
-
 //////////////////////////////////////////
 
     // ensures user is logged in
     // before entering chatroom
-    if(localStorage['User-Info'] === undefined){
+    if(!localStorage['User-Info']){
       alert('Must log in');
       $location.path('/');
     }
 
-    //removes quotes from username in localstorage
+    // removes quotes from username in localstorage
+    // username used for message author
     var username = [];
     var rawUser = localStorage['User-Info']
                     .split('')
@@ -26,7 +25,6 @@ angular.module('Meeple')
     username = username.join('');
 
 
-
 //////////////////////////////////////////
 
 
@@ -35,22 +33,24 @@ angular.module('Meeple')
 
 
 
-    $scope.sendMessage = function(e){
+    $scope.sendMessage = function(){
 
-      var requestMessage = {
-        username: username,
-        message: $scope.msg
+      var requestChat = {
+        author: username,
+        message: $scope.msg,
+
       };
 
-      // $http.post('/api/public/messages', requestMessage)
-      //   .success(function(response){
-      //   })
-      //   .error(function(error){
-      //     console.log("There was an error")
-      //   })
+      $http.post('/api/chat/post', requestChat)
+        .success(function(response){
+          console.log("This is the response from the chat post: ", response)
+        })
+        .error(function(error){
+          console.log("There was an error")
+        })
 
-      socket.emit('send message', requestMessage);
-      console.log('message submitted: ', requestMessage);
+      socket.emit('send message', requestChat);
+      console.log('message submitted: ', requestChat);
       $scope.msg = "";
 
     }
@@ -62,19 +62,9 @@ angular.module('Meeple')
     })
 
 
-
     $scope.createChatroom = function(){
-      console.log("This will create a chatroom")
+      console.log("poop")
     }
-
-
-
-
-
-
-
-
-
 
 
 

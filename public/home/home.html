@@ -4,7 +4,7 @@
     <div ng-model="chatBox" class="chatBox">
       <ul ng-repeat="message in messages track by $index">
         <div class="message">
-          <span id="messageUsername"><h5>{{message.username}}:</h5></span>
+          <span id="messageUsername"><h5>{{message.author}}:</h5></span>
           <span id="messageBody"><p>{{message.message}}</p></span>
           <hr>
         </div>
@@ -14,7 +14,7 @@
     <div id="userChat">
       <form ng-submit="sendMessage()">
         <input ng-model="msg" id="userChatInput" type="text">
-        <button>Submit</button>
+        <button id="sendMessageButton" class="glyphicon glyphicon-send"></button>
       </form>
     </div>
   </div>
@@ -22,12 +22,9 @@
 
 
   <div id="sideNav" class="col-sm-4">
-
   <!-- Side Nav Title -->
     <div class="nav">
       <h1 id="homeTitle">Meeple</h1>
-      {{localStorage['User-Info']}}
-      <button id="logoutButton" class="btn btn-default" ng-click="logout()">Logout</button>
     </div>
     <hr>
     <div>
@@ -39,13 +36,10 @@
     <div class="btn-group">
       <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Rooms<span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <li>{{chatroom.name}}</li>
-        <li>Hello</li>
-        <li>More hellos</li>
+        <li>{{message.channel}}</li>
       </ul>
+      <button id="logoutButton" class="btn btn-default" ng-click="logout()">Logout</button>
     </div>
-
-
   </div>
 
 

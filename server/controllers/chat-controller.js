@@ -1,10 +1,23 @@
-var Chatroom = require('../models/chatroom');
+const Chat = require('../models/chat');
 
-module.exports = (req, res) => {
+module.exports.postChat = (req, res) => {
+  let chat = new Chat(req.body);
+  chat.save();
 
-  let chatroom = new Chatroom(req.body);
+  //will send all messages
+  Chat.find({}, (err, allChats) => {
+    if (err){
+      res.error(err)
+    }
+    else{
+      res.json(allChats);
+    }
+  });
 
-  console.log(req.body)
+};
 
 
-}
+
+module.exports.getChat = (req, res) => {
+
+};
