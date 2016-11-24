@@ -31,7 +31,7 @@ angular.module('Meeple')
     var socket = io.connect('http://localhost:8000');
 
 
-
+    $scope.chats = []
 
     $scope.sendMessage = function(){
 
@@ -54,10 +54,9 @@ angular.module('Meeple')
       $scope.msg = "";
 
     }
-    $scope.messages = [];
 
     socket.on('get message', function(data){
-      $scope.messages.push(data);
+      $scope.chats.push(data);
       $scope.$digest()
     })
 
