@@ -44,6 +44,7 @@ angular.module('Meeple')
       $http.post('/api/chat/post', requestChat)
         .success(function(response){
           console.log("This is the response from the chat post: ", response)
+          $scope.chats = response
         })
         .error(function(error){
           console.log("There was an error")
