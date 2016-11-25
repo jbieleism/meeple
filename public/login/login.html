@@ -11,7 +11,13 @@
 
     <div class="panel-body" ng-show="!loggedIn">
 
-      <input id="usernameInput" type="text" ng-model="login.username" placeholder="username" class="form-control">
+      <input ng-show="!loginError" id="usernameInput" type="text" ng-model="login.username" placeholder="username" class="form-control">
+
+      <div ng-show="loginError" class="form-group has-error">
+        <label class="control-label" for="inputError">Enter valid credentials</label>
+        <input id="usernameInput" type="text" class="form-control" id="inputError">
+      </div>
+
 
       <input id="passwordInput" type="password" ng-model="login.password" placeholder="password" class="form-control">
 

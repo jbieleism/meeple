@@ -73,8 +73,12 @@
 }
 
 .message{
-  height:40px;
-  display:inline;
+  width:700px;
+}
+#messageIcon{
+  position:relative;
+  left:700px;
+
 }
 #messageBody{
   overflow:auto;
@@ -114,6 +118,10 @@
   box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);
   height:100%;
 }
+#roomsButtonIcon, #createChatroomButton{
+  padding-left:10px;
+}
+
 #logoutButton{
   margin-left:180px;
 }
