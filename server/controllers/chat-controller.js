@@ -18,6 +18,19 @@ module.exports.postChat = (req, res) => {
 
 
 
-module.exports.getChat = (req, res) => {
+module.exports.getChats = (req, res) => {
+
+  Chat.find({})
+    .sort({date: -1})
+    .exec((err, allChats) => {
+      if (err){
+        console.log("Error: ", error)
+        res.error(err)
+      }
+      else{
+        console.log(allChats)
+        res.json(allChats);
+      }
+  });
 
 };

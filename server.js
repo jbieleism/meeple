@@ -64,7 +64,7 @@ app.post('/api/public/login', authController.login);
 
 // Chat Controllers
 app.post('/api/chat/post', chatController.postChat);
-app.get('/api/chat/get', chatController.getChat);
+app.get('/api/chat/get', chatController.getChats);
 
 
 

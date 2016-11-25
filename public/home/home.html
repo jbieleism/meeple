@@ -2,10 +2,12 @@
   <!-- Chat Section -->
   <div id="chatSection" class="col-sm-8">
     <div ng-model="chatBox" class="chatBox">
+      <h1 ng-model="channel">Channel</h1>
       <ul ng-repeat="chat in chats track by $index">
         <div class="message">
           <span id="messageUsername"><h5>{{chat.author}}:</h5></span>
           <span id="messageBody"><p>{{chat.message}}</p></span>
+          <span><p>{{chat.channel}}</p></span>
           <hr>
         </div>
       </ul>

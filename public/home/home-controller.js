@@ -31,14 +31,13 @@ angular.module('Meeple')
     var socket = io.connect('http://localhost:8000');
 
 
-    $scope.chats = []
 
     $scope.sendMessage = function(){
 
       var requestChat = {
         author: username,
         message: $scope.msg,
-
+        channel: $scope.channel
       };
 
       $http.post('/api/chat/post', requestChat)
@@ -54,7 +53,27 @@ angular.module('Meeple')
       console.log('message submitted: ', requestChat);
       $scope.msg = "";
 
-    }
+    };
+
+    //on initial visit from user
+    function getChat(initial){
+
+      $http.get('/api/chat/get')
+        .success(function(response){
+          if (initial){
+            $scope.chats = response;
+          }
+          else{
+            $scope.incomingChats = response;
+          }
+        })
+    };
+
+    getChat(true);
+
+
+
+
 
     socket.on('get message', function(data){
       $scope.chats.push(data);
@@ -65,14 +84,6 @@ angular.module('Meeple')
     $scope.createChatroom = function(){
       console.log("poop")
     }
-
-
-
-
-
-
-
-
 
     $scope.logout = function(){
       localStorage.clear();
