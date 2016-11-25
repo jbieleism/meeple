@@ -1,6 +1,6 @@
 angular.module('Meeple')
 
-  .controller('HomeController', ['$location', '$scope', '$http', '$state', function($location, $scope, $http, $state){
+  .controller('HomeController', ['$location', '$scope', '$http', '$state', '$interval', function($location, $scope, $http, $state, $interval){
 
 //////////////////////////////////////////
 
@@ -42,8 +42,12 @@ angular.module('Meeple')
 
       $http.post('/api/chat/post', requestChat)
         .success(function(response){
-          console.log("This is the response from the chat post: ", response)
-          $scope.chats = response
+          //set time out will fix the async error
+          //error: most recent messages we not displayed until a subsequent message was sent.
+          setTimeout(function(response){
+            console.log("This is the response from the chat post: ", response)
+          }, 500)
+
         })
         .error(function(error){
           console.log("There was an error")
@@ -71,19 +75,17 @@ angular.module('Meeple')
 
     getChat(true);
 
-
-
-
-
     socket.on('get message', function(data){
       $scope.chats.push(data);
       $scope.$digest()
     })
 
 
+
     $scope.createChatroom = function(){
       console.log("poop")
     }
+
 
     $scope.logout = function(){
       localStorage.clear();
