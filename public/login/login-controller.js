@@ -4,14 +4,12 @@
     .controller('LoginController', ['$location', '$scope', '$http', '$state', function($location, $scope, $http, $state) {
 
       $scope.loggedIn = false;
-      $scope.loginError = false;
 
       if (localStorage['User-Info']){
         $scope.loggedIn = true;
       }
       else{
         $scope.loggedIn = false;
-        $scope.loginError = true;
       }
 
       $scope.loginUser = function(){
@@ -26,6 +24,19 @@
             console.log("Login Error: ", error)
           })
       }
+
+
+      function checkLogin(){
+        var body = this.document.body;
+
+        console.log(body.children)
+
+      }
+      checkLogin()
+
+
+
+
     }])
 
 }());

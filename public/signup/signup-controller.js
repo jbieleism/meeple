@@ -7,6 +7,7 @@
           $http.post('/api/public/signup', user)
             .success(function(response){
               console.log("Successful signup", response);
+              alert('Signup successful. Now log in...')
               $location.path('/')
             })
             .error(function(error){

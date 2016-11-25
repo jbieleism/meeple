@@ -54,10 +54,6 @@
   margin: 10 auto;
 }
 
-
-
-
-
 /*Home*/
 #homePage{
   max-width:100%;
@@ -74,10 +70,12 @@
 
 .message{
   width:700px;
+  height:100px;
 }
 #messageIcon{
-  position:relative;
-  left:700px;
+  top:-60px;
+  padding-left:700px;
+  font-size:50px;
 
 }
 #messageBody{
@@ -92,6 +90,7 @@
   height:90%;
   overflow:auto;
   border-bottom:1px solid black;
+  padding:5px;
 }
 #userChat{
   text-align:center;
