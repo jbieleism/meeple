@@ -3,17 +3,10 @@
 
   <div id="friendSection" class="col-sm-8 container">
 
-    <div id="channelTitle" class="">
 
-      <h1 id="channelTitleText" ng-model="channel">Search Friends</h1>
+    <h1 id="channelTitleText" ng-model="channel">Search Friends</h1>
 
-    </div>
-
-    <div id="userChat">
-      <form id="userChatForm" ng-submit="sendMessage()">
-        <input ng-model="msg" id="userChatInput" type="text">
-      </form>
-    </div>
+    <input type="text">
 
 
 
@@ -27,23 +20,10 @@
       <h1 id="homeTitle">Meeple</h1>
     </div>
     <hr>
-    <div>
-      <button ng-click="createChatroom()" class="btn btn-default">
-        Create chatroom <span id="createChatroomButton" class="glyphicon glyphicon-plus-sign"></span>
-      </button>
-    </div>
 
+    <div id="backButton">
 
-
-    <div class="btn-group">
-      <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Rooms   <span id="roomsButtonIcon" class="glyphicon glyphicon-th"></span></button>
-      <ul class="dropdown-menu">
-        <li>{{message.channel}}</li>
-      </ul>
-    </div>
-    <div>
-
-      <button class="btn btn-default" ui-sref="home">Back to home</button>
+      <button class="btn btn-default" ui-sref="home">Back to home <span class="glyphicon glyphicon-home"></span></button>
 
     </div>
 

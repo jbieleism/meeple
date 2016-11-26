@@ -1,6 +1,10 @@
  angular.module('Meeple')
   .controller('FriendController', ['$scope', '$http', function($scope, $http ){
 
-    console.log("Poopy pants")
+    $http.get('/api/friends/get').then(function(response){
+      setTimeout(function(response){
+        console.log('poop')
+      }, 100)
+    })
 
   }]);

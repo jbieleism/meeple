@@ -124,25 +124,35 @@ body{
 }
 
 
-
 #sideNav{
   background-color:#333333;
   box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);
   height:100%;
 }
 #roomsButtonIcon, #createChatroomButton{
-  padding-left:10px;
+  padding-left:20px;
 }
 
 #logoutButton{
   margin-left:180px;
 }
+#searchuserIcon{
+  padding-left:50px;
+}
 
 
 
 
 
 
+
+
+
+/*friend*/
+#backButton{
+  margin: 0 auto;
+  text-align:center;
+}
 
 
 

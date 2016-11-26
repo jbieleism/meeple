@@ -36,11 +36,15 @@ io.sockets.on('connection', (socket) => {
 
 
 })
+
+
 ////////////////////////////////////
 
 
 const authController = require('./server/controllers/authentication-controller')
 const chatController = require('./server/controllers/chat-controller')
+const friendController = require('./server/controllers/friend-controller')
+
 
 mongoose.connect('mongodb://localhost:27017/meepledb', () => console.log("Connected to Meeple Database"));
 
@@ -66,7 +70,8 @@ app.post('/api/public/login', authController.login);
 app.post('/api/chat/post', chatController.postChat);
 app.get('/api/chat/get', chatController.getChats);
 
-
+//Friend Controller
+app.get('/api/friends/get', friendController.getUsers)
 
 
 
