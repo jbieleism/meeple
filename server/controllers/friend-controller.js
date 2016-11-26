@@ -18,5 +18,7 @@ module.exports.getUsers = (req, res) => {
 
 
 module.exports.makeFriendship = (req, res) => {
-  console.log('poop')
+
+  console.log("This is the req.body: ", req.body)
+
 }
