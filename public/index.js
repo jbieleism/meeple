@@ -17,10 +17,15 @@
           templateUrl: 'public/login/login.html',
           controller: 'LoginController'
         })
-        .state('Home', {
+        .state('home', {
           url: '/home',
           templateUrl: 'public/home/home.html',
           controller: 'HomeController'
+        })
+        .state('friend', {
+          url: '/home/friends',
+          templateUrl: 'public/friendships/friend.html',
+          controller: 'FriendController'
         })
 
 
