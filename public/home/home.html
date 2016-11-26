@@ -1,6 +1,6 @@
 <div ng-controller="HomeController" class="container-fluid" id="homePage">
   <!-- Chat Section -->
-  <div id="chatSection" class="col-sm-8 container">
+  <div id="chatSection" class="col-sm-8">
 
     <div id="channelTitle" class="">
 
@@ -10,7 +10,7 @@
 
     <div ng-model="chatBox" class="chatBox" id="chatBox">
 
-      <ul class="chatContainer" ng-repeat="chat in chats track by $index">
+      <ul ng-repeat="chat in chats track by $index">
 
         <div class="well message">
           <span id="messageUsername"><h5>{{chat.author}}:</h5></span>
@@ -25,9 +25,9 @@
 
     <div id="userChat">
       <form id="userChatForm" ng-submit="sendMessage()">
-        <input ng-model="msg" id="userChatInput" type="text">
+        <input class="col-sm-6" ng-model="msg" id="userChatInput" type="text">
 
-        <span id="sendMessageButton"><button class="glyphicon glyphicon-send"></button></span>
+          <span ng-click="sendMessage()" id="sendMessagebutton" class="glyphicon glyphicon-send"></span>
       </form>
     </div>
 
@@ -50,21 +50,26 @@
 
 
     <div class="btn-group">
-      <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Rooms   <span id="roomsButtonIcon" class="glyphicon glyphicon-th"></span></button>
-      <ul class="dropdown-menu">
-        <li>{{message.channel}}</li>
-      </ul>
-      <button id="logoutButton" class="btn btn-default" ng-click="logout()">Logout</button>
+      <div>
+        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Rooms   <span id="roomsButtonIcon" class="glyphicon glyphicon-th"></span></button>
+        <ul class="dropdown-menu">
+          channel name will go here
+        </ul>
+      </div>
+
+      <div>
+        <button class="btn btn-default" ui-sref="friend">
+          Find Friends
+          <span id="searchUserIcon" class="glyphicon glyphicon-search"></span>
+        </button>
+      </div>
+      <div>
+        <button id="logoutButton" class="btn btn-default" ng-click="logout()">
+          Logout
+        </button>
+      </div>
+
     </div>
-
-    <div class="btn btn-group btn-default" ui-sref="friend">
-
-      Find Friends
-
-      <span id="searchUserIcon" class="glyphicon glyphicon-search"></span>
-
-    </div>
-
 
 
 

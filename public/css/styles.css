@@ -5,6 +5,12 @@
 body{
   background-color:lightblue;
 }
+
+
+
+
+
+
 /*Login*/
 .loginPanel{
   margin: auto;
@@ -29,6 +35,12 @@ body{
 }
 
 
+
+
+
+
+
+
 /*Signup*/
 .signupPanel{
   margin: auto;
@@ -48,13 +60,13 @@ body{
   text-align: center;
   margin: 10 auto;
 }
-
-
-
 #signedInButton{
   text-align: center;
   margin: 10 auto;
 }
+
+
+
 
 /*Home*/
 #homePage{
@@ -70,6 +82,13 @@ body{
 
 }
 
+
+
+
+
+
+
+/*chat message details*/
 .message{
   width:700px;
   height:100px;
@@ -87,10 +106,13 @@ body{
 
 
 
-
+/*Chat*/
 #chatSection{
   height:100%;
   background-color:lightblue;
+  padding-right:5px;
+  padding-left:5px;
+  max-width:95%;
 }
 #channelTitleText{
   text-align:center;
@@ -98,11 +120,15 @@ body{
 .chatBox{
   height:75%;
   overflow:auto;
+  padding-right:5px;
+  padding-left:5px;
 }
 #userChat{
   text-align:center;
-  width:750px;
+  max-width:80%;
   margin:0 auto;
+  padding-right:5px;
+  padding-left:5px;
 }
 #userChatForm{
   height:75px;
@@ -119,10 +145,17 @@ body{
 }
 
 #sendMessageButton{
-  height:25px;
-  width:35px;
+  padding-top:20px;
+  font-size:25px;
+  padding-bottom:5px;
 }
 
+
+
+
+
+
+/*SideNav*/
 
 #sideNav{
   background-color:#333333;
