@@ -1,9 +1,14 @@
 <div ng-controller="HomeController" class="container-fluid" id="homePage">
   <!-- Chat Section -->
   <div id="chatSection" class="col-sm-8 container">
+
+    <div id="channelTitle" class=""></div>
+      <h1 id="channelTitleText" ng-model="channel">Channel</h1>
+
     <div ng-model="chatBox" class="chatBox" id="chatBox">
-      <h1 ng-model="channel">Channel</h1>
-      <ul ng-repeat="chat in chats track by $index">
+
+      <ul class="chatContainer" ng-repeat="chat in chats track by $index">
+
         <div class="well message">
           <span id="messageUsername"><h5>{{chat.author}}:</h5></span>
           <span id="messageBody"><p>{{chat.message}}</p></span>
@@ -16,16 +21,18 @@
     </div>
 
     <div id="userChat">
-      <form ng-submit="sendMessage()">
+      <form id="userChatForm" ng-submit="sendMessage()">
         <input ng-model="msg" id="userChatInput" type="text">
-        <button id="sendMessageButton" class="glyphicon glyphicon-send"></button>
+
+        <span id="sendMessageButton"><button class="glyphicon glyphicon-send"></button></span>
       </form>
     </div>
+
   </div>
 
 
 
-  <div id="sideNav" class="col-sm-4">
+  <div id="sideNav" class="col-sm-4 container">
   <!-- Side Nav Title -->
     <div class="nav">
       <h1 id="homeTitle">Meeple</h1>

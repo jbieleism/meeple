@@ -81,28 +81,39 @@
 #messageBody{
   overflow:auto;
 }
+
+
+
+
+
 #chatSection{
   height:100%;
-  padding:0px;
   background-color:lightblue;
 }
+#channelTitleText{
+  text-align:center;
+}
 .chatBox{
-  height:90%;
+  height:75%;
   overflow:auto;
-  border-bottom:1px solid black;
-  padding:5px;
 }
 #userChat{
   text-align:center;
-  max-width:700px;
+  width:750px;
   margin:0 auto;
-  display:inline;
-  position:relative;
-  top:10px;
+}
+#userChatForm{
+  height:75px;
+  text-align:center;
+  margin:0 auto;
+  padding-left:20px;
 }
 #userChatInput{
   text-align:center;
   width:95%;
+  margin: 10 auto;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 #sendMessageButton{

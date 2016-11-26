@@ -43,7 +43,7 @@ angular.module('Meeple')
       $http.post('/api/chat/post', requestChat)
         .success(function(response){
           //set time out will fix the async error
-          //error: most recent messages we not displayed until a subsequent message was sent.
+          //error: most recent messages won't display until a subsequent message was sent.
           setTimeout(function(response){
             console.log("This is the response from the chat post: ", response)
           }, 500)
