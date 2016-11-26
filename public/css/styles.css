@@ -2,7 +2,9 @@
   transition:.5s;
 }
 
-
+body{
+  background-color:lightblue;
+}
 /*Login*/
 .loginPanel{
   margin: auto;

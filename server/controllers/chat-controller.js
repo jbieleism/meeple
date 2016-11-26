@@ -28,7 +28,6 @@ module.exports.getChats = (req, res) => {
         res.error(err)
       }
       else{
-        console.log(allChats)
         res.json(allChats);
       }
   });
