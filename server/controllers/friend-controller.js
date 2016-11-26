@@ -3,7 +3,6 @@ const User = require ('../models/user');
 
 module.exports.getUsers = (req, res) => {
 
-  let user = new User(req.body);
   User.find({}, (err, results) => {
     if (err){
       res.send((err) => {
@@ -11,7 +10,7 @@ module.exports.getUsers = (req, res) => {
       })
     }
     else{
-      console.log("These are the results: ", results)
+      res.json(results);
     }
   })
 
