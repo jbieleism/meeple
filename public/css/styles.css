@@ -142,6 +142,7 @@ body{
   margin: 10 auto;
   padding-top:10px;
   padding-bottom:10px;
+  background-color:transparent;
 }
 
 #sendMessageButton{

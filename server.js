@@ -45,7 +45,6 @@ const authController = require('./server/controllers/authentication-controller')
 const chatController = require('./server/controllers/chat-controller')
 const friendController = require('./server/controllers/friend-controller')
 
-
 mongoose.connect('mongodb://localhost:27017/meepledb', () => console.log("Connected to Meeple Database"));
 
 
@@ -72,7 +71,7 @@ app.get('/api/chat/get', chatController.getChats);
 
 //Friend Controller
 app.get('/api/friends/get', friendController.getUsers)
-
+app.post('/api/friends/makeFriendship', friendController.makeFriendship)
 
 
 var port = 8000;
