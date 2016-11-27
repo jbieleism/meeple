@@ -12,10 +12,12 @@
 
     <div>
       <ul ng-repeat="people in users"
-          ng-show="user !== people.username" ">
+          ng-show="user !== people.username">
 
         <p>{{people.username}}</p>
         <button ng-click="makeFriendship(people)" class="btn btn-success">Friend</button>
+
+
       </ul>
     </div>
 

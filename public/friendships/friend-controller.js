@@ -17,14 +17,11 @@
 
     $scope.makeFriendship = function(userRequested){
 
-      // console.log("User requesting: ", user);
-      // console.log("User requested: ", userRequested)
-      // console.log("This is the requesters id: ", userRequested._id)
-
       var friendRequest = {
         friendRequested: userRequested.username,
         requestedBy: $scope.user,
         requesterId: userRequested._id
+        // date: {type: Date, default: Date.now}
 
       }
 
