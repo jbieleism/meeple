@@ -5,8 +5,5 @@ module.exports = mongoose.model('Chat', {
   author: String,
   message: String,
   channel: String,
-  date: {
-    type: Date,
-    default: Date.now
-  }
+  date: String
 });

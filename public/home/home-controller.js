@@ -34,10 +34,13 @@ angular.module('Meeple')
 
     $scope.sendMessage = function(){
 
+      var date = new Date;
+      date = date.toLocaleString();
       var requestChat = {
         author: username,
         message: $scope.msg,
-        channel: $scope.channel
+        channel: $scope.channel,
+        date: date
       };
 
       $http.post('/api/chat/post', requestChat)
@@ -73,8 +76,7 @@ angular.module('Meeple')
     getChat(true);
 
     socket.on('get message', function(data){
-      data.date = new Date;
-      data.date = data.date.toLocaleString();
+
       $scope.chats.push(data);
       $scope.$digest()
     })
