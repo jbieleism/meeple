@@ -23,13 +23,6 @@ io.sockets.on('connection', (socket) => {
     io.sockets.emit('get message', data)
   })
 
-  socket.on('userConnect', (data, callback) => {
-    callback(true);
-    socket.username = data;
-    users.push(socket.username);
-    updateUsernames();
-  })
-
   let updateUsernames = () => {
     io.sockets.emit('get users', usernames)
   }

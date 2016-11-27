@@ -29,6 +29,7 @@ module.exports.getChats = (req, res) => {
       }
       else{
         res.json(allChats);
+
       }
   });
 
