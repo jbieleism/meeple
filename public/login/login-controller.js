@@ -26,16 +26,6 @@
       }
 
 
-      function checkLogin(){
-        var body = this.document.body;
-
-        console.log(body.children)
-
-      }
-      checkLogin()
-
-
-
 
     }])
 

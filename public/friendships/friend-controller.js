@@ -16,22 +16,26 @@
       })
 
 
-    $scope.makeFriendship = function(userId){
+    $scope.makeFriendship = function(userRequested){
 
       var user = localStorage['User-Info'];
 
-      var friendRequest = {
-        userId: userId,
-        username: user
-      }
+      console.log("User requesting: ", user);
+      console.log("User requested: ", userRequested)
 
-      $http.post('/api/friends/makeFriendship', friendRequest)
-        .success(function(response){
-          console.log("Successful response: ", response)
-        })
-        .error(function(error){
-          console.log("There has bee a grave error: ", error)
-      })
+
+      // var friendRequest = {
+      //   friendRequest: otherUser,
+      //   username: user
+      // }
+
+      // $http.post('/api/friends/makeFriendship', friendRequest)
+      //   .success(function(response){
+      //     console.log("Successful response: ", response);
+      //   })
+      //   .error(function(error){
+      //     console.log("There has bee a grave error: ", error)
+      // })
 
     }
 
