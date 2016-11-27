@@ -9,20 +9,19 @@
     <input type="text">
 
     <hr>
-
-    <div>
-      <ul ng-repeat="people in users"
-          ng-show="user !== people.username">
-
-        <p>{{people.username}}</p>
-        <button ng-click="makeFriendship(people)" class="btn btn-success">Friend</button>
-
-
-      </ul>
-    </div>
+      <table class="table table-striped table-hover ">
+        <tbody>
+          <tr ng-repeat="people in users"
+              ng-show="user !== people.username">>
+            <td></td>
+            <td>{{people.username}}</td>
+            <td><button ng-click="makeFriendship(people)" class="btn btn-primary">Friend</button></td>
+            <td class="glyphicon glyphicon-user"></td>
+          </tr>
+        </tbody>
+      </table>
 
   </div>
-
 
 
 
