@@ -8,13 +8,16 @@
 
     <input type="text">
 
-  <div>
-    <ul ng-repeat="user in users">
+    <hr>
 
-      <p>{{user.username}}</p>
-      <button ng-click="makeFriendship(user)" class="btn btn-success">Friend</button>
-    </ul>
-  </div>
+    <div>
+      <ul ng-repeat="people in users"
+          ng-show="user !== people.username" ">
+
+        <p>{{people.username}}</p>
+        <button ng-click="makeFriendship(people)" class="btn btn-success">Friend</button>
+      </ul>
+    </div>
 
   </div>
 

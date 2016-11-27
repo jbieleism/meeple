@@ -30,7 +30,12 @@ module.exports.makeFriendship = (req, res) => {
       })
     }
     else{
+
+      console.log("Req'ed body: ", req.body)
       console.log("Results: ", results)
+
+
+
     }
 
   })

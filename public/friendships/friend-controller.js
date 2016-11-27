@@ -3,7 +3,7 @@
 
 
 
-    var user = localStorage['User-Info'];
+    $scope.user = localStorage['User-Info'];
     $scope.users = []
 
     $http.get('/api/friends/get')
@@ -15,18 +15,15 @@
         console.log("There has been a grave error: ", error)
       })
 
-
     $scope.makeFriendship = function(userRequested){
 
-      var user = localStorage['User-Info'];
-
-      console.log("User requesting: ", user);
-      console.log("User requested: ", userRequested)
-      console.log("This is the requesters id: ", userRequested._id)
+      // console.log("User requesting: ", user);
+      // console.log("User requested: ", userRequested)
+      // console.log("This is the requesters id: ", userRequested._id)
 
       var friendRequest = {
         friendRequested: userRequested.username,
-        requestedBy: user,
+        requestedBy: $scope.user,
         requesterId: userRequested._id
 
       }
