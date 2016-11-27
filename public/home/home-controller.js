@@ -28,7 +28,7 @@ angular.module('Meeple')
 //////////////////////////////////////////
 
 
-    var socket = io.connect('$location.absUrl()');
+    var socket = io.connect('http://localhost:8000');
 
 
 
@@ -71,15 +71,18 @@ angular.module('Meeple')
           if (initial){
             $scope.chats = response;
           }
+          else{
+            $scope.incomingMessages = response;
+          }
         })
     };
 
     getChat(true);
 
     socket.on('get message', function(data){
-      data.date = new Date;
-      data.date = data.date.toLocaleString();
-      console.log("data date: ", data.date)
+      // data.date = new Date;
+      // data.date = data.date.toLocaleString();
+      // console.log("data date: ", data.date)
       $scope.chats.push(data);
       $scope.$digest()
     })
