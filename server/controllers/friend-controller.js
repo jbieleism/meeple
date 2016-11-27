@@ -19,7 +19,21 @@ module.exports.getUsers = (req, res) => {
 
 module.exports.makeFriendship = (req, res) => {
 
-  console.log("This is the req.body: ", req.body)
+  console.log("This is the req.body", req.body)
+
+
+
+  User.findById(req.body.requesterId, (err, results) => {
+    if (err){
+      res.send((err) => {
+        console.log("There was an error in the make friendship function", err)
+      })
+    }
+    else{
+      console.log("Results: ", results)
+    }
+
+  })
 
 }
 
