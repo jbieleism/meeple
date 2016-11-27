@@ -73,6 +73,8 @@ angular.module('Meeple')
     getChat(true);
 
     socket.on('get message', function(data){
+      data.date = new Date;
+      data.date = data.date.toLocaleString();
       $scope.chats.push(data);
       $scope.$digest()
     })
