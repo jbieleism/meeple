@@ -91,7 +91,7 @@ body{
 /*chat message details*/
 .message{
   width:700px;
-  height:100px;
+  max-height:150px;
 }
 #messageIcon{
   top:-60px;
