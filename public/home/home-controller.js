@@ -76,12 +76,12 @@ angular.module('Meeple')
         .success(function(response){
           if (initial){
             $scope.chats = response;
+
           }
-          else{
-            $scope.incomingMessages = response;
-          }
+
         })
     };
+
 
     getChat(true);
 
