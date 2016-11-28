@@ -12,21 +12,22 @@
     <div ng-model="chatBox" class="chatBox" id="chatBox">
 
       <ul ng-repeat="chat in chats track by $index">
-
-        <blockquote class="well">
+        <blockquote id="message" class="well">
           <span id="messageUsername"><h5>{{chat.author}}:</h5></span>
           <span id="messageBody"><p>{{chat.message}}</p></span>
           <hr>
-          <small>{{chat.channel}}</small>
-          <small>{{chat.date}}</small>
           <span id="messageIcon" class="glyphicon glyphicon-comment"></span>
+          <div>
+            <small>{{chat.channel}}</small>
+            <small>{{chat.date}}</small>
+          </div>
         </blockquote>
       </ul>
     </div>
 
     <div id="userChat">
       <form id="userChatForm" ng-submit="sendMessage()">
-        <input class="col-sm-6" ng-model="msg" id="userChatInput" type="text">
+        <input class="col-sm-6" ng-model="msg" id="userChatInput" type="text" placeholder="enter a message"/>
 
           <span ng-click="sendMessage()" id="sendMessagebutton" class="glyphicon glyphicon-send"></span>
       </form>

@@ -96,20 +96,17 @@ body{
 
 
 /*chat message details*/
-.message{
-  width:700px;
-  max-height:150px;
-}
+
 #messageIcon{
   top:-60px;
   padding-left:700px;
   font-size:50px;
-
 }
 #messageBody{
-  overflow:auto;
+  text-align:center;
+  position:relative;
+  left:-10px;
 }
-
 
 
 
