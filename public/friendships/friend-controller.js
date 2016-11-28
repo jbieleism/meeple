@@ -15,12 +15,12 @@
       })
 
     $scope.makeFriendship = function(userRequested){
-      // console.log("user id: ", $scope.userId)
+
       var friendRequest = {
         friendRequested: userRequested.username,
+        friendRequestedId: userRequested._id,
         requestedBy: $scope.user,
         requesterId: $scope.userId
-
       }
 
       $http.post('/api/friends/makeFriendship', friendRequest)

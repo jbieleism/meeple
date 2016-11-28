@@ -20,13 +20,20 @@ module.exports.getUsers = (req, res) => {
 module.exports.makeFriendship = (req, res) => {
 
   console.log(req.body)
+
+  // request initiator
   let requester = req.body.requestedBy;
   let userId = req.body.requesterId;
-  let requested = req.body.friendRequested;
 
-  User.findById(requester, (err, results) => {
+  // new friend
+  let newFriend = {
+    friendName: req.body.friendRequested,
+    friendId: req.body.friendRequestedId
+  }
 
-    console.log("results: ", results)
+  User.findById(userId, (err, userResults) => {
+
+    console.log("poo:", userResults.friends)
 
 
   })
