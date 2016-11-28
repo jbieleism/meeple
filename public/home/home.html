@@ -44,50 +44,56 @@
     <hr>
 
 
+    <table class="table table-striped table-hover ">
+      <tbody>
 
-    <div class="btn-group">
+        <tr class="active">
+          <td ng-click="createChatroom()">
+            Create chatroom
+          </td>
+          <td>
+            <span id="createChatroomButton" class="glyphicon glyphicon-plus"></span>
+          </td>
+        </tr>
 
-      <div>
-        <button ng-click="createChatroom()" class="btn btn-default">
-          Create chatroom <span id="createChatroomButton" class="glyphicon glyphicon-plus"></span>
-        </button>
-        <input ng-model="channelName" placeholder="name the chat" type="text" />
-      </div>
+        <tr class="active" data-toggle="modal" data-target="#channelList">
+          <td>
+            Channels
+          </td>
+          <td><span id="roomsButtonIcon" class="glyphicon glyphicon-th"></span></td>
+        </tr>
 
-      <div>
+        <tr class="active" ui-sref="friend">
+          <td>
+            Find Friends
+          </td>
+          <td>
+            <span id="searchUserIcon" class="glyphicon glyphicon-search"></span>
+          </td>
+        </tr>
+
+        <tr class="active" ng-click="logout()">
+          <td>
+            Logout
+          </td>
+          <td>
+          <span class="glyphicon glyphicon-off"></span>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+
         <!-- channel change button -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">
-          Channels
-          <span id="roomsButtonIcon" class="glyphicon glyphicon-th"></span>
-        </button>
 
-        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div id="channelList" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-
+              Channel List will go here
             </div>
           </div>
         </div>
-
-      </div>
-
-      <div>
-        <button class="btn btn-default" ui-sref="friend">
-          Find Friends
-          <span id="searchUserIcon" class="glyphicon glyphicon-search"></span>
-        </button>
-      </div>
-      <div id="logoutButton">
-        <button id="logoutButton" class="btn btn-default" ng-click="logout()">
-          Logout
-        </button>
-      </div>
-
-    </div>
-
-
-
-
 
   </div>
 
