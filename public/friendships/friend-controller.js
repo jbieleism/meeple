@@ -2,6 +2,7 @@
   .controller('FriendController', ['$scope', '$http', function($scope, $http){
 
     $scope.user = localStorage['User-Info'];
+    $scope.userId = localStorage['User-Id'];
     $scope.users = []
 
     $http.get('/api/friends/get')
@@ -14,11 +15,11 @@
       })
 
     $scope.makeFriendship = function(userRequested){
-
+      // console.log("user id: ", $scope.userId)
       var friendRequest = {
         friendRequested: userRequested.username,
         requestedBy: $scope.user,
-        requesterId: userRequested._id
+        requesterId: $scope.userId
 
       }
 

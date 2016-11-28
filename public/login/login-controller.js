@@ -17,6 +17,7 @@
           .success(function(response){
             //saves user info to local storage upon successful login
             localStorage.setItem('User-Info', response.username);
+            localStorage.setItem('User-Id', response._id);
             $location.path('/home');
 
           })

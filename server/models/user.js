@@ -4,7 +4,8 @@ module.exports = mongoose.model('User', {
   username: String,
   password: String,
   friends: [{
-      friendName: String
+      friendName: String,
+      friendId: String
   }]
 
 });
