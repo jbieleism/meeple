@@ -5,6 +5,19 @@
     $scope.userId = localStorage['User-Id'];
     $scope.users = []
 
+    // friend tabs
+    $scope.allFriends = true;
+    $scope.friendList = false;
+
+    $scope.allFriendTab = function(){
+      $scope.allFriends = true;
+      $scope.friendList = false;
+    }
+    $scope.friendListTab = function(){
+      $scope.allFriends = false;
+      $scope.friendList = true;
+    }
+
     $http.get('/api/friends/get')
       .success(function(response){
         console.log(response);
