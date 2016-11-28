@@ -10,7 +10,7 @@
 
     <hr>
       <table class="table table-hover">
-        <tbody>
+        <tbody id="friendTable">
           <tr id="friendCard" ng-repeat="people in users | filter:friendSearch"
               ng-show="user !== people.username">
             <td id="friendTitle">{{people.username}}</td>

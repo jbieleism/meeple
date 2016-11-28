@@ -82,6 +82,13 @@ body{
 
 }
 
+/*SideNav*/
+
+#sideNav{
+  background-color:#333333;
+  box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);
+  height:100%;
+}
 
 
 
@@ -154,24 +161,6 @@ body{
 
 
 
-
-
-/*SideNav*/
-
-#sideNav{
-  background-color:#333333;
-  box-shadow:0px 0px 10px 0px rgba(0,0,0,0.75);
-  height:100%;
-}
-
-
-
-
-
-
-
-
-
 /*friend*/
 #backButton{
   margin: 0 auto;
@@ -187,8 +176,10 @@ body{
 #friendCard:hover{
   transition:.5s;
 }
-
-
+#friendTable{
+  height:100%;
+  overflow:auto;
+}
 
 
 
