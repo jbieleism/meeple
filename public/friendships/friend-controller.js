@@ -19,7 +19,6 @@
         friendRequested: userRequested.username,
         requestedBy: $scope.user,
         requesterId: userRequested._id
-        // date: {type: Date, default: Date.now}
 
       }
 

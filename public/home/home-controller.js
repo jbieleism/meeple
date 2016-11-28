@@ -102,7 +102,7 @@ angular.module('Meeple')
 
     $scope.createChatroom = function(){
 
-      console.log(channels)
+      console.log(channels);
     }
 
 
