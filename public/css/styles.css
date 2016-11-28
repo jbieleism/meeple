@@ -163,6 +163,16 @@ body{
   margin: 0 auto;
   text-align:center;
 }
+#friendSearchBar{
+  margin:0 auto;
+  text-align:center;
+  width:500px;
+}
+#friendSearch{
+  text-align:center;
+  width:100%;
+}
+
 #friendIcon{
   padding-top:10px;
   font-size:35px;
@@ -170,12 +180,15 @@ body{
 #friendTitle{
   font-size:30px;
 }
+#friendCard{
+  overflow:auto;
+}
 #friendCard:hover{
   transition:.5s;
 }
 #friendTable{
-  height:100%;
-  overflow:auto;
+  height:500px;
+  overflow:scroll;
 }
 
 
