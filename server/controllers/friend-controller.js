@@ -19,8 +19,6 @@ module.exports.getUsers = (req, res) => {
 
 module.exports.makeFriendship = (req, res) => {
 
-  console.log(req.body)
-
   // request initiator
   let requester = req.body.requestedBy;
   let userId = req.body.requesterId;
@@ -32,10 +30,9 @@ module.exports.makeFriendship = (req, res) => {
   }
 
   User.findById(userId, (err, userResults) => {
-
-    console.log("poo:", userResults.friends)
-
-
+    userResults.friends.push(newFriend)
+    console.log(userResults.friends)
+    userResults.save();
   })
 
 }
