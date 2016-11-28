@@ -77,10 +77,15 @@ angular.module('Meeple')
           if (initial){
             $scope.chats = response;
 
+            //get active chat channels
+            $scope.chats.forEach(function(index){
+              channels.push(index.channel)
+            })
           }
 
         })
     };
+
 
 
     getChat(true);
@@ -96,8 +101,7 @@ angular.module('Meeple')
 
 
     $scope.createChatroom = function(){
-      channels.push($scope.channelName)
-      $scope.channelName = "";
+
       console.log(channels)
     }
 
