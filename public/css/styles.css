@@ -185,13 +185,15 @@ body{
   text-align:center;
 }
 #friendIcon{
-  font-size:40px;
+  padding-top:10px;
+  font-size:35px;
 }
 #friendTitle{
   font-size:30px;
 }
-
-
+#friendCard:hover{
+  transition:.5s;
+}
 
 
 
