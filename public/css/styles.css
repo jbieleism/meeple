@@ -167,9 +167,6 @@ body{
   padding-left:20px;
 }
 
-#logoutButton{
-  margin-left:180px;
-}
 #searchuserIcon{
   padding-left:50px;
 }
@@ -187,7 +184,12 @@ body{
   margin: 0 auto;
   text-align:center;
 }
-
+#friendIcon{
+  font-size:40px;
+}
+#friendTitle{
+  font-size:30px;
+}
 
 
 

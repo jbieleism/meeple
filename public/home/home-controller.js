@@ -4,6 +4,8 @@ angular.module('Meeple')
 
 //////////////////////////////////////////
 
+
+
     // ensures user is logged in
     // before entering chatroom
     if(!localStorage['User-Info']){
@@ -30,18 +32,22 @@ angular.module('Meeple')
 
     var socket = io.connect('http://localhost:8000');
 
-
+    var currentChannel = "Global Channel";
+    var channels = [];
 
     $scope.sendMessage = function(){
 
       var date = new Date;
       date = date.toLocaleString();
+
       var requestChat = {
         author: username,
         message: $scope.msg,
         channel: $scope.channel,
-        date: date
+        date: date,
+        channel: currentChannel
       };
+
       console.log(requestChat)
 
       $http.post('/api/chat/post', requestChat)
@@ -55,7 +61,7 @@ angular.module('Meeple')
         })
         .error(function(error){
           console.log("There was an error")
-        })
+      });
 
       socket.emit('send message', requestChat);
       console.log('message submitted: ', requestChat);
@@ -90,7 +96,9 @@ angular.module('Meeple')
 
 
     $scope.createChatroom = function(){
-      console.log("poop")
+      channels.push($scope.channelName)
+      $scope.channelName = "";
+      console.log(channels)
     }
 
 

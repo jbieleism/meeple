@@ -1,8 +1,6 @@
  angular.module('Meeple')
   .controller('FriendController', ['$scope', '$http', function($scope, $http){
 
-
-
     $scope.user = localStorage['User-Info'];
     $scope.users = []
 
