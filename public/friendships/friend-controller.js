@@ -3,6 +3,14 @@
 
     $scope.user = localStorage['User-Info'];
     $scope.userId = localStorage['User-Id'];
+    $scope.friendsList = [];
+
+
+    var userFriends = localStorage['User-Friends'].split(',');
+    userFriends.forEach(function(friend){
+      $scope.friendsList.push(friend)
+    })
+
     $scope.users = []
 
     // friend tabs
@@ -20,12 +28,11 @@
 
     $http.get('/api/friends/get')
       .success(function(response){
-        console.log(response);
-        $scope.users = response
+        $scope.users = response;
       })
       .error(function(error){
         console.log("There has been a grave error: ", error)
-      })
+    })
 
     $scope.makeFriendship = function(userRequested){
 
@@ -45,9 +52,6 @@
       })
 
     }
-
-
-
 
 
 

@@ -11,15 +11,16 @@ module.exports.signup = (req, res) => {
 module.exports.login = (req, res) => {
 
   User.find(req.body, (err, results) => {
-
     if (err){
       console.log('Error in backend signin: ', err)
     }
     if (results && results.length === 1) {
-      let userData = results[0]
+      let userData = results[0];
+      console.log(userData.friends)
       res.json({
         username: req.body.username,
-        _id: userData._id
+        _id: userData._id,
+        friends: userData.friends
       })
     }
   })

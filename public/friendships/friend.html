@@ -13,15 +13,17 @@
       <!-- friend nav tabs -->
       <div id="friendNavTabs">
         <ul id="tabList" class="nav nav-tabs">
-          <li ng-click="allFriendTab()" class="active"><a data-toggle="tab">Friends</a></li>
-          <li><a ng-click="friendListTab()" data-toggle="tab">Friendships</a></li>
+          <li ng-click="allFriendTab()" class="active"><a data-toggle="tab">Users</a></li>
+
+          <li ng-click="filterFriends()"><a ng-click="friendListTab()" data-toggle="tab">Friendships</a></li>
         </ul>
       </div>
 
       <div ng-show="allFriends" id="friendTable">
         <table class="table table-hover">
           <tbody id="friendTableBody">
-            <tr id="friendCard" ng-repeat="people in users | filter:friendSearch"
+            <tr id="friendCard"
+                ng-repeat="people in users | filter:friendSearch"
                 ng-show="user !== people.username">
               <td id="friendTitle">{{people.username}}</td>
               <td><button ng-click="makeFriendship(people)" class="btn btn-primary">Friend</button></td>
@@ -30,12 +32,15 @@
           </tbody>
         </table>
       </div>
-      <div ng-show="friendList" id="friendTable friendList">
+
+      <div ng-show="friendList" id="friendTable">
         <table class="table table-hover">
           <tbody id="friendTableBody">
-            <tr id="friendCard" ng-repeat="people in users | filter:friendSearch"
+            <tr id="friendCard"
+                ng-repeat="friend in friendsList | filter:friendSearch"
                 ng-show="user !== people.username">
-              <td id="friendTitle">This is a simulation</td>
+
+              <td id="friendTitle">{{friend}}</td>
 
               <td id="friendIcon"><span class="glyphicon glyphicon-user"></span></td>
             </tr>

@@ -26,7 +26,6 @@ angular.module('Meeple')
 
     username = username.join('');
 
-
 //////////////////////////////////////////
 
 
@@ -76,7 +75,6 @@ angular.module('Meeple')
         .success(function(response){
           if (initial){
             $scope.chats = response;
-
             //get active chat channels
             $scope.chats.forEach(function(index){
               channels.push(index.channel)
